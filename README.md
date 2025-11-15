@@ -3,7 +3,7 @@ Threat and Safety Image Detector (AWS Rekognition)
 
 This project analyzes images stored in an S3 bucket and checks whether the image contains any unsafe or potentially threatening content. It uses Amazon Rekognition to look for things like violence, weapons, fire, accidents, and other visuals that could be considered harmful. Everything runs in the cloud through a Python Lambda function.
 
-What this project does
+# What this project does
 
 You upload an image into an S3 bucket.
 The Lambda function reads the bucket name and file name from the input.
@@ -17,11 +17,11 @@ The function then returns a simple result.
 If threats were found, it lists them along with confidence levels.
 If not, it returns a message saying the image appears safe.
 
-Why I built this
+# Why I built this
 
 I wanted to build something practical that shows how AWS services can work together to process images and extract real meaning from them. It also helps demonstrate how serverless applications work, since everything happens through S3, Lambda, and Rekognition without needing to manage any servers.
 
-How the system works
+# How the system works
 
 S3 stores the images.
 Lambda contains the Python code that processes the request.
@@ -35,7 +35,7 @@ Trigger the Lambda function by passing the bucket name and image name.
 Lambda sends the image to Rekognition for analysis.
 Lambda returns the final result, which includes any detected threats.
 
-Requirements
+# Requirements
 
 An AWS account.
 An S3 bucket to store the images you want to analyze.
@@ -43,16 +43,3 @@ A Lambda function using Python 3.
 Amazon Rekognition turned on in the same region.
 Permissions for the Lambda function to use both S3 and Rekognition.
 
-Notes
-
-Make sure the S3 file name matches exactly, including capitalization or spaces.
-All services must be in the same AWS region.
-Images with clear subjects usually produce better detection results.
-The detection is only as good as Rekognition’s confidence levels.
-
-Future improvements
-
-Add a threat scoring system.
-Send notifications if dangerous content is detected.
-Add a simple web interface for uploading images.
-Store previous results in a database like DynamoDB.
