@@ -35,11 +35,4 @@ Trigger the Lambda function by passing the bucket name and image name.
 Lambda sends the image to Rekognition for analysis.
 Lambda returns the final result, which includes any detected threats.
 
-# Requirements
-
-An AWS account.
-An S3 bucket to store the images you want to analyze.
-A Lambda function using Python 3.
-Amazon Rekognition turned on in the same region.
-Permissions for the Lambda function to use both S3 and Rekognition.
 
